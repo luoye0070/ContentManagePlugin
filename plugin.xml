@@ -1,0 +1,40 @@
+<plugin name='content-manage-plugin' version='0.1' grailsVersion='2.2 &gt; *'>
+  <author>Your name</author>
+  <title>Content Manage Plugin Plugin</title>
+  <description>Brief summary/description of the plugin.
+</description>
+  <documentation>http://grails.org/plugin/content-manage-plugin</documentation>
+  <type>ContentManagePluginGrailsPlugin</type>
+  <resources>
+    <resource>com.lj.cmp.controller.front.FrontPageController</resource>
+    <resource>com.lj.cmp.controller.front.ImageShowController</resource>
+    <resource>com.lj.cmp.controller.manage.ContentsManageController</resource>
+    <resource>com.lj.cmp.controller.manage.ManageController</resource>
+    <resource>com.lj.cmp.controller.manage.ResourceFileController</resource>
+    <resource>com.lj.cmp.controller.manage.SiteManageController</resource>
+    <resource>com.lj.cmp.controller.manage.TestSomeController</resource>
+    <resource>com.lj.cmp.data.ContentBlockInfo</resource>
+    <resource>com.lj.cmp.data.ContentClassInfo</resource>
+    <resource>com.lj.cmp.data.ContentsInfo</resource>
+    <resource>com.lj.cmp.data.ImageInfo</resource>
+    <resource>com.lj.cmp.data.LinkInfo</resource>
+    <resource>com.lj.cmp.data.ResourceFileInfo</resource>
+    <resource>com.lj.cmp.data.WebSiteInfo</resource>
+    <resource>com.lj.cmp.service.content.ContentsService</resource>
+    <resource>com.lj.cmp.service.front.FrontPageService</resource>
+    <resource>com.lj.cmp.service.resource.ResourceFilesService</resource>
+    <resource>com.lj.cmp.service.siteconfig.ContentBlockService</resource>
+    <resource>com.lj.cmp.service.siteconfig.WebSiteInfoService</resource>
+    <resource>com.lj.cmp.service.util.UploadFileService</resource>
+    <resource>com.lj.cmp.service.util.VisitDeviceService</resource>
+    <resource>com.lj.cmp.service.util.WebUtilService</resource>
+  </resources>
+  <repositories>
+    <repository name='grailsCentral' url='http://grails.org/plugins' />
+    <repository name='mavenCentral' url='http://repo1.maven.org/maven2/' />
+  </repositories>
+  <dependencies />
+  <plugins />
+  <runtimePluginRequirements />
+  <behavior />
+</plugin>

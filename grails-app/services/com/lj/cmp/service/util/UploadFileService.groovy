@@ -1,6 +1,7 @@
 package com.lj.cmp.service.util
 
 import com.lj.cmp.util.common.UploadFile
+import com.lj.cmp.util.common.ValidationCode
 import com.lj.cmp.util.customenum.ResourceType
 
 
@@ -12,15 +13,18 @@ class UploadFileService {
         if (UploadFile.bootPath == "") {
             UploadFile.bootPath = webUtilService.getServletContext().getRealPath("/");
         }
-        //将文件名限定在64个字符内
-        Date now=new Date();
 
-        String nowStr=now.getTime()+"";
-        int nowStrLength=nowStr.length();
-        if (fileName.length() > (64-nowStrLength)) {
-            fileName = fileName.substring(fileName.length() - (64-nowStrLength));
+        //获取扩展名
+        String fileExt ="";
+        if(fileName.lastIndexOf(".")!=-1){
+            fileExt = fileName.substring(fileName.lastIndexOf(".")).toLowerCase();
         }
-        fileName=nowStr+fileName;
+        //文件名有时间加8位随机数组成
+        Date now=new Date();
+        String nowStr=now.getTime()+"";
+        String randStr= ValidationCode.getAuthCodeStr(8,ValidationCode.LAWERCASE_NUMBER);
+        fileName=nowStr+randStr+fileExt;
+
         BufferedInputStream bis = new BufferedInputStream(is);
         bis.mark(bis.available() + 1);
         //String fileFullName= UploadFile.uploadToYuPan(bis,fileName);
